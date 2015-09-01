@@ -43,7 +43,6 @@ public class Provider extends ContentProvider {
 		String tableName = "";
 		switch (mUriMatcher.match(uri)) {
 			case CODE_ALL_A:
-				Log.e(TAG, "CODE_ALL_A");
 				tableName = TBL_A.NAME;
 				projection = TBL_A.ALL_COLUMNS;
 				break;
@@ -52,7 +51,6 @@ public class Provider extends ContentProvider {
 				projection = TBL_B.ALL_COLUMNS;
 				break;
 			case CODE_A_DESC:
-				Log.e(TAG, "CODE_ODD_A_DESC");
 				tableName = TBL_A.NAME + " AS " + TBL_A.NAME + " INNER JOIN " + TBL_B.NAME + " AS " + TBL_B.NAME
 						+ " ON (" + TBL_A.NAME + "." + TBL_A.COLUMN_ID + "=" + TBL_B.NAME + "." + TBL_B.COLUMN_ID + ")";
 				String[] c = new String[TBL_A.ALL_COLUMNS.length + TBL_B.ALL_COLUMNS.length];
@@ -75,7 +73,6 @@ public class Provider extends ContentProvider {
 		Cursor c = DataSrc.getInstance().getDatabase().query(tableName, projection, selection, selectionArgs, null, null, sortOrder);
 		if (c != null) {
 			c.setNotificationUri(getContext().getContentResolver(), uri);
-			Log.e(TAG, "query(): " + c.toString().split("@")[1]);
 		}
 		return c;
 	}
