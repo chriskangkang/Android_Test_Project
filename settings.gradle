@@ -1,1 +1,1 @@
-include ':GradleTest', ':ContentProvider'
+include ':ContentProvider', ':ObjectObserver'
