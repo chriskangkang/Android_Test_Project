@@ -24,7 +24,7 @@ public class ObjectObserverPattern extends Activity implements Observer, OnClick
 		setContentView(R.layout.main);
 		btn = (Button) findViewById(R.id.btn);
 
-		ObservableObject.initialize();
+//		ObservableObject.initialize();
 		mObservableObject = ObservableObject.getInstance();
 		mObservableObject.addObserver(this);
 		mObservableObject.setValue(String.valueOf(count++));

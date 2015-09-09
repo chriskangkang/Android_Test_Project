@@ -8,12 +8,12 @@ public class ObservableObject extends Observable {
 
 	private String name = "";
 
-	public static ObservableObject initialize() {
-		return instance == null ? instance = new ObservableObject() : instance;
-	}
+//	public static ObservableObject initialize() {
+//		return instance == null ? instance = new ObservableObject() : instance;
+//	}
 
 	public static ObservableObject getInstance() {
-		return instance;
+		return instance == null ? instance = new ObservableObject() : instance;
 	}
 
 	public String getValue() {

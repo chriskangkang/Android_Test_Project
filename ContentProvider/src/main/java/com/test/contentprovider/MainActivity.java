@@ -29,9 +29,6 @@ public class MainActivity extends Activity {
 	private ScheduledThreadPoolExecutor scheduledThreadUpdate;
 	private ScheduledThreadPoolExecutor scheduledThreadDelete;
 
-	private int firstItem;
-	private int itemCount;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -50,20 +47,6 @@ public class MainActivity extends Activity {
 		listviewB = (ListView) findViewById(R.id.listViewB);
 		cursorAdapterB = new CursorAdapterB(MainActivity.this, null, true);
 		listviewB.setAdapter(cursorAdapterB);
-//		listviewB.setOnScrollListener(new AbsListView.OnScrollListener() {
-//			@Override
-//			public void onScrollStateChanged(AbsListView view, int scrollState) {
-//				if (scrollState == SCROLL_STATE_FLING) {
-//					getContentResolver().notifyChange(Provider.CONTENT_URI_TBL_B, null);
-//				}
-//			}
-//
-//			@Override
-//			public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-//				firstItem = firstVisibleItem;
-//				itemCount = visibleItemCount;
-//			}
-//		});
 	}
 
 	@Override
