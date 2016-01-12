@@ -1,1 +1,1 @@
-include ':ContentProvider', ':ObjectObserver', ':SlidingTabBasic'
+include ':ContentProvider', ':ObjectObserver'
